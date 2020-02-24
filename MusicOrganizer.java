@@ -176,4 +176,14 @@ public class MusicOrganizer
         Random rand = new Random();
         playTrack(rand.nextInt(tracks.size()));
     }
+    
+    public void allRandomNoRepeat(){
+        ArrayList<Track> tempTracks = tracks;
+        Random rand = new Random();
+        while(tempTracks.size() != 0){
+            int nextSong = rand.nextInt(tempTracks.size());
+            playTrack(nextSong);
+            tempTracks.remove(nextSong);
+        }
+    }
 }
